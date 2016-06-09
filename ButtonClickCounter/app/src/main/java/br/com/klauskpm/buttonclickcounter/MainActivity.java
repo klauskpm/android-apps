@@ -8,9 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Button ourButton;
+    private TextView ourMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +25,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ourButton = (Button) findViewById(R.id.button);
+        ourMessage = (TextView) findViewById(R.id.textView);
+
+        View.OnClickListener ourOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ourMessage.setText("The button got tapped");
+            }
+        };
+
+        ourButton.setOnClickListener(ourOnClickListener);
     }
 
     @Override
