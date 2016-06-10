@@ -8,16 +8,28 @@ public class Player {
     private int lives;
     private int level;
     private int score;
+    private Weapon weapon;
 
     public Player() {
-        this.handleName = "Unknown player";
+        setHandleName("Unknown player");
+        setLives(5);
+        setLevel(1);
+        setScore(0);
+        setDefaultWeapon();
     }
 
     public Player(String handle) {
+        this();
         setHandleName(handle);
-        this.lives = 3;
-        this.level = 1;
-        this.score = 0;
+    }
+
+    public Player(String handleName, int level) {
+        this(handleName);
+        setLevel(level);
+    }
+
+    private void setDefaultWeapon() {
+        this.weapon = new Weapon("Sword", 10, 20);
     }
 
     public String getHandleName() {
@@ -53,5 +65,13 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 }
