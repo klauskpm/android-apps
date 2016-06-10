@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.ArrayList;
+
 /**
  * Created by klaus.machado on 09/06/2016.
  */
@@ -9,6 +11,7 @@ public class Player {
     private int level;
     private int score;
     private Weapon weapon;
+    private ArrayList<InventoryItem> inventoryItems;
 
     public Player() {
         setHandleName("Unknown player");
@@ -16,6 +19,7 @@ public class Player {
         setLevel(1);
         setScore(0);
         setDefaultWeapon();
+        inventoryItems = new ArrayList<InventoryItem>();
     }
 
     public Player(String handle) {
@@ -74,4 +78,25 @@ public class Player {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
+
+    public ArrayList<InventoryItem> getInventoryItems() {
+        return inventoryItems;
+    }
+
+    public void addInventoryItem(InventoryItem inventoryItem) {
+        this.inventoryItems.add(inventoryItem);
+    }
+
+    public boolean dropInventoryItem(InventoryItem inventoryItem) {
+        if (this.inventoryItems.contains(inventoryItem)) {
+            this.inventoryItems.remove(inventoryItem);
+            return true;
+        }
+
+        return false;
+    }
+
+//    public void setInventoryItems(ArrayList<InventoryItem> inventoryItems) {
+//        this.inventoryItems = inventoryItems;
+//    }
 }
