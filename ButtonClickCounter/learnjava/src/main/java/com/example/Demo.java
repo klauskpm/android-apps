@@ -9,24 +9,22 @@ public class Demo {
         int indexPos = 0;
         int sumTotal = 0;
 
-        while(indexPos < elements.length)
+        for(; indexPos<elements.length; indexPos++)
         {
             System.out.println("Processing: " + indexPos + " Value: " + elements[indexPos]);
 
-            if (elements[indexPos] > 99) {
-                System.out.println("Continue");
-                indexPos++;
-                continue;
-            }
-
-            if (elements[indexPos] < 0) {
-                System.out.println("Break");
-                break;
-            }
+//            if (elements[indexPos] > 99) {
+//                System.out.println("Continue");
+//                continue;
+//            }
+//
+//            if (elements[indexPos] < 0) {
+//                System.out.println("Break");
+//                break;
+//            }
 
 
             sumTotal = sumTotal + elements[indexPos];
-            indexPos++;
         }
 
         System.out.println("Sum total was: " + sumTotal);
