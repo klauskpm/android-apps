@@ -19,8 +19,6 @@ public class Soldier extends Enemy {
             return;
         }
 
-        int remaningHitPoints = getHitPoints() - damageTaken;
-        setHitPoints(remaningHitPoints);
-        System.out.println("I took " + damageTaken + " points of damage, and have " + remaningHitPoints + " left.");
+        super.takeDamage(damageTaken);
     }
 }

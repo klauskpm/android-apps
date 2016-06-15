@@ -8,8 +8,8 @@ public class Demo {
         System.out.println("Hitpoints: " + enemy.getHitPoints() + " lives: " + enemy.getLives());
         enemy.takeDamage(3);
 
-        Soldier soldier = new Soldier(25, 3);
+        SuperSoldier soldier = new SuperSoldier(25, 3);
         System.out.println("Hitpoints: " + soldier.getHitPoints() + " lives: " + soldier.getLives());
-        soldier.takeDamage(10);
+        soldier.takeDamage(10.5f);
     }
 }
