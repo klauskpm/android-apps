@@ -6,25 +6,25 @@ public class Demo {
     public static void main(String[] args) {
 
         int[] elements = {5, 7, 12, 100, -1, 8, 3};
-        int indexPos = 0;
         int sumTotal = 0;
 
-        for(; indexPos<elements.length; indexPos++)
+//        for(; indexPos<elements.length; indexPos++)
+        for(int elementContents : elements)
         {
-            System.out.println("Processing: " + indexPos + " Value: " + elements[indexPos]);
+            System.out.println("Processing: " + elementContents);
 
-//            if (elements[indexPos] > 99) {
-//                System.out.println("Continue");
-//                continue;
-//            }
-//
-//            if (elements[indexPos] < 0) {
-//                System.out.println("Break");
-//                break;
-//            }
+            if (elementContents > 99) {
+                System.out.println("Continue");
+                continue;
+            }
+
+            if (elementContents < 0) {
+                System.out.println("Break");
+                break;
+            }
 
 
-            sumTotal = sumTotal + elements[indexPos];
+            sumTotal = sumTotal + elementContents;
         }
 
         System.out.println("Sum total was: " + sumTotal);
