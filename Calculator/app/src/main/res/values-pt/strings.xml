@@ -2,4 +2,5 @@
 <resources>
     <string name="action_settings">Opções</string>
     <string name="help_instructions">Digite dois números</string>
+    <string name="result_description">O Resultado</string>
 </resources>
