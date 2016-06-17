@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSubtraction;
     private Button btnDivision;
     private Button btnMultiplication;
+    private Button btnClear;
 
     private TextView textResult;
 
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btnSubtraction = (Button) findViewById(R.id.btnSubtraction);
         btnDivision = (Button) findViewById(R.id.btnDivision);
         btnMultiplication = (Button) findViewById(R.id.btnMultiplication);
+        btnClear = (Button) findViewById(R.id.btnClear);
 
         textResult = (TextView) findViewById(R.id.txtResult);
 
@@ -47,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 double oper1 = getOper(operand1);
                 double oper2 = getOper(operand2);
+
+                if (oper1 == 0 || oper2 == 0) {
+                    Toast.makeText(
+                            MainActivity.this,
+                            R.string.enter_number,
+                            Toast.LENGTH_LONG
+                    ).show();
+                    return;
+                }
 
                 double theResult = oper1 + oper2;
 
@@ -60,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
                 double oper1 = getOper(operand1);
                 double oper2 = getOper(operand2);
 
+                if (oper1 == 0 || oper2 == 0) {
+                    Toast.makeText(
+                            MainActivity.this,
+                            R.string.enter_number,
+                            Toast.LENGTH_LONG
+                    ).show();
+                    return;
+                }
+
                 double theResult = oper1 - oper2;
 
                 textResult.setText(Double.toString(theResult));
@@ -72,8 +93,14 @@ public class MainActivity extends AppCompatActivity {
                 double oper1 = getOper(operand1);
                 double oper2 = getOper(operand2);
 
-                if (oper2 == 0f)
-                    oper2 = 1f;
+                if (oper1 == 0 || oper2 == 0) {
+                    Toast.makeText(
+                            MainActivity.this,
+                            R.string.enter_number,
+                            Toast.LENGTH_LONG
+                    ).show();
+                    return;
+                }
 
                 double theResult = oper1 / oper2;
 
@@ -87,9 +114,28 @@ public class MainActivity extends AppCompatActivity {
                 double oper1 = getOper(operand1);
                 double oper2 = getOper(operand2);
 
+                if (oper1 == 0 || oper2 == 0) {
+                    Toast.makeText(
+                            MainActivity.this,
+                            R.string.enter_number,
+                            Toast.LENGTH_LONG
+                    ).show();
+                    return;
+                }
+
                 double theResult = oper1 * oper2;
 
                 textResult.setText(Double.toString(theResult));
+            }
+        });
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operand1.setText("");
+                operand2.setText("");
+                textResult.setText("0.0");
+                operand1.requestFocus();
             }
         });
     }
