@@ -12,9 +12,24 @@
     tools:context="br.com.klauskpm.top10download.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/xmlTextView"/>
+        android:text="Parse XML File"
+        android:id="@+id/btnParse"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/xmlListView"
+        android:layout_below="@+id/btnParse"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="@id/btnParse"
+        android:layout_alignParentEnd="@id/btnParse"/>
 </RelativeLayout>
