@@ -12,6 +12,9 @@
     <com.google.android.youtube.player.YouTubePlayerView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="@android:color/white"/>
+        android:background="@android:color/white"
+        android:id="@+id/youtube_player">
+
+    </com.google.android.youtube.player.YouTubePlayerView>
 
 </LinearLayout>
