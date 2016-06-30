@@ -25,12 +25,14 @@ public class GetFlickrJsonData extends GetRawData {
         mPhotos = new ArrayList<Photo>();
     }
 
-    public void execute() {
-        super.setmRawUrl(mDestinationUri.toString());
-        DownloadJsonData downloadJsonData = new DownloadJsonData();
-        Log.v(TAG, "Built URI = " + mDestinationUri.toString());
-        downloadJsonData.execute(mDestinationUri.toString());
-    }
+//    public void execute() {
+//        Log.d(TAG, "klaus: passou");
+//        super.setmRawUrl(mDestinationUri.toString());
+//        Log.d(TAG, "execute: entrou pelo GetFlickrJsonData");
+//        DownloadJsonData downloadJsonData = new DownloadJsonData();
+//        Log.v(TAG, "Built URI = " + mDestinationUri.toString());
+//        downloadJsonData.execute(mDestinationUri.toString());
+//    }
 
     private boolean createAndUpdateUri(String searchCriteria, boolean matchAll) {
         final String FLICKR_API_BASE_URL = "https://api.flickr.com/services/feeds/photos_public.gne";
@@ -96,11 +98,12 @@ public class GetFlickrJsonData extends GetRawData {
             Log.e(TAG, "processResult: ", e);
         }
 
-
+        Log.d(TAG, "" + this.mPhotos.size());
     }
 
     public class DownloadJsonData extends DownloadRawData {
         protected void onPostExecute(String webData) {
+            Log.d(TAG, "onPostExecute: entrou no post");
             super.onPostExecute(webData);
             processResult();
         }

@@ -79,6 +79,9 @@ public class GetRawData {
                 return null;
 
             try {
+                if (params[0] == null)
+                    return null;
+
                 URL url = new URL(params[0]);
 
                 urlConnection = (HttpURLConnection) url.openConnection();
