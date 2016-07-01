@@ -32,16 +32,16 @@ public class GetRawData {
         this.mData = null;
     }
 
+    public String getData() {
+        return mData;
+    }
+
     public DownloadStatus getDownloadStatus() {
         return mDownloadStatus;
     }
 
     public void setmRawUrl(String mRawUrl) {
         this.mRawUrl = mRawUrl;
-    }
-
-    public String getData() {
-        return mData;
     }
 
     public void execute() {
@@ -79,9 +79,6 @@ public class GetRawData {
                 return null;
 
             try {
-                if (params[0] == null)
-                    return null;
-
                 URL url = new URL(params[0]);
 
                 urlConnection = (HttpURLConnection) url.openConnection();

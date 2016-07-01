@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ProcessPhotos processPhotos = new ProcessPhotos("kazlauskas", true);
+        ProcessPhotos processPhotos = new ProcessPhotos("google", true);
         processPhotos.execute();
     }
 
@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void execute() {
-            super.execute();
-
+//            super.execute();
             ProcessData processData = new ProcessData();
             processData.execute();
         }
